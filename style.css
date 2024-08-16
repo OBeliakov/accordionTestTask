@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+}
+
+.accordion-wrapper {
+  padding: 0 15px;
+}
+
+.accordion {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1px;
+  position: relative;
+}
+
+.accordion-title {
+  margin: 0;
+}
+
+.accordion-button {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  color: #333;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.accordion-button::after {
+  width: 20px;
+  height: 20px;
+  content: "";
+  background-image: url("./img/down-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  transition: transform 0.2s ease-in-out;
+  position: absolute;
+  right: 15px;
+}
+
+.accordion-button[aria-expanded="true"] {
+  color: #0044cc;
+  background-color: #cce0ff;
+}
+
+.accordion-button[aria-expanded="true"]::after {
+  transform: rotate(-180deg);
+}
+
+.accordion-icon {
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  height: 0.5rem;
+  pointer-events: none;
+  position: absolute;
+  right: 2em;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 0.5rem;
+}
+
+.accordion-button[aria-expanded="true"] .accordion-icon {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.accordion-button:focus {
+  outline: 3px solid #007bff;
+}
+
+.accordion-content {
+  padding: 20px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: #ffffff;
+  font-size: 16px;
+  color: #333;
+}
+
+.accordion-content p {
+  margin: 0;
+}
